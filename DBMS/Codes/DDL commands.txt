@@ -1,0 +1,35 @@
+CREATE TABlE Person (
+  ID int NOT NULL,
+  LastName varchar(255) NOT NULL,
+  FirstName varchar(255),
+  Age int,
+  CHECK (Age>=15)
+);
+
+======================================================================
+
+CREATE TABLE supplier
+( supplier_id numeric(10) not null,
+    supplier_name varchar2(50) not null,
+    contact_name varchar2(50),
+    CONSTRAINT supplier_pk PRIMARY KEY (supplier_id)
+);
+
+CREATE TABLE products
+(
+    product_id numeric(10) not null,
+    supplier_id numeric(10) not null,
+    CONSTRAINT fk_supplier 
+    	FOREIGN KEY (supplier_id)
+    	REFERENCES supplier(supplier_id)
+);
+
+INSERT INTO supplier (supplier_id, supplier_name, contact_name)
+VALUES (1, 'abc', 'def');
+
+select* from supplier;
+
+Update supplier set supplier_id=1;
+
+
+
