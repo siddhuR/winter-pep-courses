@@ -1,0 +1,76 @@
+CREATE TABlE course (
+  cid int,
+  course varchar(255)
+);
+
+CREATE TABLE hod
+(
+    cid int,
+    Name varchar(255)
+);
+
+INSERT INTO course(cid,course) VALUES(101,'data');
+INSERT INTO course(cid,course) VALUES(102,'Mech');
+INSERT INTO course(cid,course) VALUES(103,'Elec');
+
+select * from course;
+
+INSERT INTO hod(cid,Name) VALUES(101,'Ram');
+INSERT INTO hod(cid,Name) VALUES(102,'Rajat');
+INSERT INTO hod(cid,Name) VALUES(104,'Jiya');
+
+
+
+select * from hod;
+
+-- INNER JOIN
+
+select course.cid,course.course,hod.cid,hod.Name 
+from course
+INNER JOIN hod ON course.cid = hod.cid;
+
+-- LEFT JOIN
+
+select course.cid,course.course,hod.cid,hod.Name 
+from course
+LEFT JOIN hod ON course.cid = hod.cid;
+
+-- RIGHT JOIN
+
+select course.cid,course.course,hod.cid,hod.Name 
+from course
+RIGHT JOIN hod ON course.cid = hod.cid;
+
+-- FULL OUTER JOIN
+
+select course.cid,course.course,hod.cid,hod.Name 
+from course
+FULL OUTER JOIN hod ON course.cid = hod.cid;
+
+-- SELF JOIN
+
+select course.cid,course.course,hod.cid,hod.Name 
+from course
+JOIN hod ON course.cid = hod.cid;
+
+--------------
+
+CREATE TABlE mod1 (
+  cid int,
+  Name varchar(255)
+);
+
+
+-------------
+
+-- AGGREGATE FUNCTIONS
+
+SELECT MAX(cid) FROM hod;
+SELECT AVG(cid) FROM hod;
+SELECT MIN(cid) FROM hod;
+SELECT COUNT(*) FROM hod;
+SELECT distinct cid FROM hod;
+
+
+
+
