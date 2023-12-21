@@ -1,6 +1,18 @@
 #include<iostream>
 using namespace std;
 
+struct Node {
+    string data;
+    Node* next;
+};
+
+Node* newNode(const string& data) {
+    Node* newNode = new Node;
+    newNode->data = data;
+    newNode->next = nullptr;
+    return newNode;
+}
+
 void insertNode(Node** root, int data) {
     Node* node = newNode(data);
     Node* ptr;
