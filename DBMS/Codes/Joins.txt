@@ -1,76 +1,72 @@
-CREATE TABlE course (
-  cid int,
-  course varchar(255)
+-- CREATE TABLE statements
+CREATE TABLE course (
+  cid INT,
+  course1 VARCHAR(255)
 );
 
-CREATE TABLE hod
-(
-    cid int,
-    Name varchar(255)
+CREATE TABLE hod (
+    cid INT,
+    Name VARCHAR(255)
 );
 
-INSERT INTO course(cid,course) VALUES(101,'data');
-INSERT INTO course(cid,course) VALUES(102,'Mech');
-INSERT INTO course(cid,course) VALUES(103,'Elec');
+-- INSERT INTO statements for 'course' table
+INSERT INTO course(cid, course1) VALUES(101, 'data');
+INSERT INTO course(cid, course1) VALUES(102, 'Mech');
+INSERT INTO course(cid, course1) VALUES(103, 'Elec');
 
-select * from course;
+-- SELECT statement for 'course' table
+SELECT * FROM course;
 
-INSERT INTO hod(cid,Name) VALUES(101,'Ram');
-INSERT INTO hod(cid,Name) VALUES(102,'Rajat');
-INSERT INTO hod(cid,Name) VALUES(104,'Jiya');
+-- INSERT INTO statements for 'hod' table
+INSERT INTO hod(cid, Name) VALUES(101, 'Ram');
+INSERT INTO hod(cid, Name) VALUES(102, 'Rajat');
+INSERT INTO hod(cid, Name) VALUES(104, 'Jiya');
 
-
-
-select * from hod;
+-- SELECT statement for 'hod' table
+SELECT * FROM hod;
 
 -- INNER JOIN
-
-select course.cid,course.course,hod.cid,hod.Name 
-from course
-INNER JOIN hod ON course.cid = hod.cid;
+SELECT course.cid, course.course1, hod.cid, hod.Name 
+FROM course
+INNER JOIN hod ON course.cid = hod.cid;
 
 -- LEFT JOIN
-
-select course.cid,course.course,hod.cid,hod.Name 
-from course
-LEFT JOIN hod ON course.cid = hod.cid;
+SELECT course.cid, course.course1, hod.cid, hod.Name 
+FROM course
+LEFT JOIN hod ON course.cid = hod.cid;
 
 -- RIGHT JOIN
-
-select course.cid,course.course,hod.cid,hod.Name 
-from course
-RIGHT JOIN hod ON course.cid = hod.cid;
+SELECT course.cid, course.course1, hod.cid, hod.Name 
+FROM course
+RIGHT JOIN hod ON course.cid = hod.cid;
 
 -- FULL OUTER JOIN
-
-select course.cid,course.course,hod.cid,hod.Name 
-from course
-FULL OUTER JOIN hod ON course.cid = hod.cid;
+SELECT course.cid, course.course1, hod.cid, hod.Name 
+FROM course
+FULL OUTER JOIN hod ON course.cid = hod.cid;
 
 -- SELF JOIN
+SELECT c1.cid, c1.course1, c2.cid AS hod_cid, c2.Name
+FROM course c1
+JOIN hod c2 ON c1.cid = c2.cid;
 
-select course.cid,course.course,hod.cid,hod.Name 
-from course
-JOIN hod ON course.cid = hod.cid;
 
---------------
+SELECT course.cid, course.course1
+FROM course
+JOIN ON course.cid = course.cid;
 
-CREATE TABlE mod1 (
-  cid int,
-  Name varchar(255)
+
+----------------------------------
+
+-- CREATE TABLE statement for 'mod1' table
+CREATE TABLE mod1 (
+  cid INT,
+  Name VARCHAR(255)
 );
 
-
--------------
-
 -- AGGREGATE FUNCTIONS
-
 SELECT MAX(cid) FROM hod;
 SELECT AVG(cid) FROM hod;
 SELECT MIN(cid) FROM hod;
 SELECT COUNT(*) FROM hod;
-SELECT distinct cid FROM hod;
-
-
-
-
+SELECT DISTINCT cid FROM hod;

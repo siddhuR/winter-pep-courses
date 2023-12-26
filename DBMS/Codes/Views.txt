@@ -1,0 +1,28 @@
+CREATE TABLE student (
+    Id INT,
+    F_Name VARCHAR(255),
+    L_Name VARCHAR(255),
+    Age INT,
+    Salary INT
+);
+
+INSERT INTO student(Id, F_Name, L_Name, Age, Salary) VALUES(1, 'Ajay', 'Singh', 22, 20000);
+INSERT INTO student(Id, F_Name, L_Name, Age, Salary) VALUES(2, 'Ram', 'Kumar', 21, 30000);
+INSERT INTO student(Id, F_Name, L_Name, Age, Salary) VALUES(3, 'Shyam', 'Sharma', 18, 25000);
+INSERT INTO student(Id, F_Name, L_Name, Age, Salary) VALUES(4, 'Jiya', 'Kumari', 25, 60000);
+INSERT INTO student(Id, F_Name, L_Name, Age, Salary) VALUES(5, 'Ashu', 'Singh', 30, 15000);
+
+SELECT * FROM student;
+
+Create VIEW student_view AS
+SELECT F_Name,Age FROM student;
+
+SELECT * FROM student_view;
+
+Create VIEW student_view1 AS
+SELECT F_Name,Age FROM student
+WHERE Salary<=30000;
+
+SELECT * FROM student_view1;
+
+SELECT * FROM student_view where Age<25;
