@@ -1,0 +1,22 @@
+-- create a table Student of 5 columns - regno <primary>, fname <not null>, mname <default value>, lname <null>, bloodGroup
+
+CREATE TABlE Student (
+  regNo int NOT NULL PRIMARY KEY,
+  fName varchar(255) NOT NULL,
+  mName varchar(255) DEFAULT 'abc',
+  lName varchar(255),
+  bloodGroup varchar(3)
+    check bloodGroup IN ('A','B','o'),
+);
+
+-- create a table employee of 4 columns - foreign key, address, phone number, pincode
+
+CREATE TABLE student1
+(
+    address varchar(255),
+    phoneNo numeric(10) not null,
+    pinCode numeric(6) not null,
+    CONSTRAINT student1
+    	FOREIGN KEY (regNo)
+    	REFERENCES Student(regNo)
+);

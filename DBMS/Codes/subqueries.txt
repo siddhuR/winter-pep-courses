@@ -1,0 +1,33 @@
+create table hod1(cid number(10),
+    name varchar(20),
+    salary number(10));
+
+insert into hod1 (cid, name, salary) values(100, 'rohan', 100000);
+insert into hod1 (cid, name, salary) values(102, 'sare', 200000);
+insert into hod1 (cid, name, salary) values(104, 'jiva', 300000);
+
+select * from hod1;
+
+-- max salary
+SELECT MAX(salary) from hod1;
+
+-- Whole row of max salary
+SELECT * from hod1 where salary=(SELECT MAX(salary) from hod1);
+
+-- Second Highest salary
+SELECT MAX(salary) from hod1 where salary NOT IN (SELECT MAX(salary) from hod1);
+
+-- Whole row of second highest salary
+SELECT * from hod1 where salary = (SELECT MAX(salary) from hod1 where salary NOT IN (SELECT MAX(salary) from hod1));
+
+
+-- subquery to insert the rows of table to another table
+create table hod2(cid number(10),
+    name varchar(20),
+    salary number(10));
+
+INSERT into hod2
+SELECT * from hod1
+WHERE salary=(SELECT MAX(salary) from hod1);
+
+SELECT * FROM hod2;

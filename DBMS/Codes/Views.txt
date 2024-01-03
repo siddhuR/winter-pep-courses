@@ -26,3 +26,15 @@ WHERE Salary<=30000;
 SELECT * FROM student_view1;
 
 SELECT * FROM student_view where Age<25;
+
+Create VIEW student_view2 AS
+SELECT F_Name FROM student_view;
+
+select * from student_view2;
+
+
+ALTER VIEW student_view AS SELECT F_Name,L_Name,Age FROM student;
+
+ALTER VIEW student_view AS 
+SELECT F_Name, L_Name, Age, Salary
+FROM student;
