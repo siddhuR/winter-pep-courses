@@ -1,0 +1,84 @@
+#include <iostream>
+using namespace std;
+
+// Function to rotate array
+void Rotate(int arr[], int d, int n)
+{
+	// Storing rotated version of array
+	int temp[n];
+
+	// Keeping track of the current index
+	// of temp[]
+	int k = 0;
+
+	// Storing the n - d elements of
+	// array arr[] to the front of temp[]
+	for (int i = d; i < n; i++) {
+		temp[k] = arr[i];
+		k++;
+	}
+
+	// Storing the first d elements of array arr[]
+	// into temp
+	for (int i = 0; i < d; i++) {
+		temp[k] = arr[i];
+		k++;
+	}
+
+	// Copying the elements of temp[] in arr[]
+	// to get the final rotated array
+	for (int i = 0; i < n; i++) {
+		arr[i] = temp[i];
+	}
+}
+
+// Function to print elements of array
+void PrintTheArray(int arr[], int n)
+{
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << " ";
+	}
+}
+
+// Driver code
+int main()
+{
+	int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+	int N = sizeof(arr) / sizeof(arr[0]);
+	int d = 7;
+
+	// Function calling
+	Rotate(arr, d, N);
+	PrintTheArray(arr, N);
+
+	return 0;
+}
+===
+//rotate right
+#include <iostream>
+using namespace std;
+
+void rotate_array_right(int arr[], int n, int d) {
+    d = d % n; // adjust d if it's greater than n
+    int temp[d];
+    for(int i = 0; i < d; i++) {
+        temp[i] = arr[n - d + i];
+    }
+    for(int i = n - 1; i >= d; i--) {
+        arr[i] = arr[i - d];
+    }
+    for(int i = 0; i < d; i++) {
+        arr[i] = temp[i];
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = 5;
+    int d = 2;
+    rotate_array_right(arr, n, d);
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}

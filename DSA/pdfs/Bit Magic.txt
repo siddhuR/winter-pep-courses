@@ -1,0 +1,116 @@
+// C++ Program to swap two numbers without
+// using temporary variable
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int x = 10, y = 5;
+
+	// Code to swap 'x' and 'y'
+	x = x + y; // x now becomes 15
+	y = x - y; // y becomes 10
+	x = x - y; // x becomes 5
+	cout << "After Swapping: x =" << x << ", y=" << y;
+}
+
+===
+//LOGICAL AND
+#include <iostream>  
+using namespace std;  
+  
+int main() {  
+        int a = 5;  
+        int b = 9;  
+    
+        // false && false = false  
+        cout << ((a == 0) && (a > b)) << endl;  
+    
+        // false && true = false  
+        cout << ((a == 0) && (a < b)) << endl;  
+  
+        // true && false = false  
+     cout << ((a == 5) && (a > b)) << endl;  
+  
+        // true && true = true  
+        cout << ((a == 5) && (a < b)) << endl;  
+  
+      return 0;  
+}  
+===
+//logical OR
+#include <iostream>  
+using namespace std;  
+  
+int main() {  
+    int a = 5;  
+    int b = 9;  
+    
+    // false && false = false  
+    cout << ((a == 0) || (a > b)) << endl;  
+    
+    // false && true = true  
+    cout << ((a == 0) || (a < b)) << endl;  
+  
+    // true && false = true  
+    cout << ((a == 5) || (a > b)) << endl;  
+  
+    // true && true = true  
+    cout << ((a == 5) || (a < b)) << endl;  
+  
+    return 0;  
+}  
+
+===
+//LOGICAL NOT
+
+#include <iostream>  
+using namespace std;  
+  
+int main() {  
+     int a = 5;  
+    
+     // !false = true  
+     cout << !(a == 0) << endl;  
+  
+     // !true = false  
+     cout << !(a == 5) << endl;  
+  
+     return 0;  
+}  
+==
+//LEFT SHIFT OPERATOR
+#include<iostream>  
+using namespace std;  
+int main()  
+{  
+    // a = 5(00000101), b = 9(00001001)  
+    unsigned char a = 5, b = 9;  
+  
+    // The result is 00001010  
+    cout << "a<<1: "<<  (a<<1) << "\n";  
+  
+    // The result is 00010010  
+    cout << "b<<1: " <<  (b<<1);  
+    return 0;  
+}  
+===
+//Right shift operator
+
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+    // a = 5(00000101), b = 9(00001001)  
+    unsigned char a = 5, b = 9;  
+  
+    // The result is 00000010  
+  
+    cout<< "a>>1: " <<  (a >> 1) << "\n";  
+  
+    // The result is 00000100  
+    cout<< "b>>1: " <<  (b >> 1);  
+    return 0;  
+}  
+
+===

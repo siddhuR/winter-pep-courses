@@ -1,0 +1,45 @@
+-- Question 1
+
+create table Person(personid number(10),
+    firstname varchar(20),
+    lastname varchar(20),
+    CONSTRAINT personpk PRIMARY KEY (personid)
+    );
+
+create table Address(addressid number(10),
+    personid number(10),
+    city varchar(20),
+    state varchar(20),
+    CONSTRAINT addresspk PRIMARY KEY (addressid)
+    );
+
+
+insert into Person(personid, firstname, lastname) values(100, 'vikas', 'yadav');
+insert into Person(personid, firstname, lastname) values(200, 'Abhinav', 'kumar');
+
+insert into Address(addressid, personid, city, state) values(1, 100, 'abc', 'def');
+insert into Address(addressid, personid, city, state) values(2, 200, 'ghi', 'jkl');
+
+SELECT * FROM Person;
+SELECT * FROM Address;
+
+SELECT Person.firstname, Person.lastname, Address.city, Address.state 
+FROM Person
+INNER JOIN Address ON Person.personid = Address.personid;
+
+---------------------------------
+
+-- Question 2
+
+-- create a table and with sql query with person_id and picture. And insert 2 records in it
+
+-- Create table
+CREATE TABLE person_pic (
+    person_id INT PRIMARY KEY,
+    picture BLOB
+);
+
+-- Insert records
+INSERT INTO person_table (person_id, picture) VALUES
+(1, ''),
+(2, '');

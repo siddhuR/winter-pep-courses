@@ -31,3 +31,18 @@ SELECT * from hod1
 WHERE salary=(SELECT MAX(salary) from hod1);
 
 SELECT * FROM hod2;
+
+-----------------------------------
+-- update name for 2nd highest salary
+UPDATE hod1 SET name = 'abc'
+    WHERE salary = ( SELECT MAX(salary) FROM hod1
+    WHERE salary < ( SELECT MAX(salary) FROM hod1));
+
+SELECT * FROM hod1;
+
+-----------------------------------
+-- Select 3rd highest salaried row
+SELECT * FROM hod1
+    WHERE salary = ( SELECT MAX(salary) FROM hod1
+    WHERE salary < ( SELECT MAX(salary) FROM hod1
+    WHERE salary < ( SELECT MAX(salary) FROM hod1))); 
